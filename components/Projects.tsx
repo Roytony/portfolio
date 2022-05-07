@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { animateScroll as scroll } from 'react-scroll'
 import { motion } from 'framer-motion'

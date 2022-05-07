@@ -35,7 +35,7 @@ const Skills = () => {
   )
 }
 
-const ImageComponent = ({ src }) => (
+const ImageComponent = ({ src }: { src: string }) => (
   <div>
     <Image src={src} width={60} height={60} />
   </div>
