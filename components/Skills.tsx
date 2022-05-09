@@ -36,8 +36,8 @@ const Skills = () => {
 }
 
 const ImageComponent = ({ src }: { src: string }) => (
-  <div>
-    <Image src={src} width={60} height={60} />
+  <div className="cursor-pointer transition duration-100 ease-out hover:scale-125">
+    <Image objectFit="contain" src={src} width={60} height={60} />
   </div>
 )
 

@@ -31,7 +31,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <div className="px-4 text-lg">
-        <p className="font-semibold">
+        <p className="text-2xl font-semibold">
           hey i'm Arindam <span className="text-2xl">👋</span>
         </p>
         <p className="py-2  font-medium  lg:leading-7">
