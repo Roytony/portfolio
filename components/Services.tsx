@@ -33,7 +33,7 @@ const Services = () => {
 
   return (
     <div className="flex flex-col items-center justify-center py-5">
-      <h2 className="py-4 text-3xl font-semibold">Services</h2>
+      <h2 className="py-4 text-3xl font-semibold ">Services</h2>
       <Toaster position="top-right" />
       {shown && (
         <motion.div
@@ -84,7 +84,7 @@ const Services = () => {
           </button>
         </motion.div>
       )}
-      <div className="relative grid grid-cols-3 gap-5">
+      <div className="relative grid gap-5 lg:grid-cols-3">
         <ServiceCard
           logo={'💻'}
           title="Landing Pages + Blog"
@@ -126,7 +126,7 @@ interface ServiceProps {
 }
 
 const ServiceCard = ({ logo, title, description }: ServiceProps) => (
-  <article className="space-y-4 rounded-lg bg-gray-200 p-4">
+  <article className="mx-auto w-[90%] space-y-4 rounded-lg bg-gray-200 p-4">
     <h2 className="text-xl">{logo}</h2>
     <p className="text-2xl font-semibold">{title} </p>
     <p className="text-lg">{description}</p>

@@ -3,8 +3,8 @@ import Image from 'next/image'
 const Skills = () => {
   return (
     <div className="py-5">
-      <h2 className="py-4 text-3xl font-semibold">Skills</h2>
-      <div className="flex flex-wrap space-x-6">
+      <h2 className="py-4 text-center  text-3xl font-semibold">Skills</h2>
+      <div className="flex flex-wrap space-x-6 lg:mx-4">
         <ImageComponent src="https://cdn.svgporn.com/logos/javascript.svg" />
         <ImageComponent src="https://cdn.svgporn.com/logos/typescript-icon.svg" />
         <ImageComponent src="https://cdn.svgporn.com/logos/nextjs-icon.svg" />
@@ -37,7 +37,7 @@ const Skills = () => {
 
 const ImageComponent = ({ src }: { src: string }) => (
   <div className="cursor-pointer transition duration-100 ease-out hover:scale-125">
-    <Image objectFit="contain" src={src} width={60} height={60} />
+    <Image objectFit="contain" src={src} width={40} height={40} />
   </div>
 )
 

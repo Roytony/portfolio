@@ -17,7 +17,7 @@ const Projects = () => {
 
   return (
     <div className="w-full py-5">
-      <h2 className="py-4 text-3xl font-semibold">Projects</h2>
+      <h2 className="py-4 text-center text-3xl font-semibold">Projects</h2>
       <div className="grid w-full grid-cols-1 gap-5   lg:grid-cols-3">
         <Project img={'/previe.png'} title="Instagram-clone" />
         <Project img="/preview.png" title="Education Dashboard" />

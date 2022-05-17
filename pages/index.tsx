@@ -7,7 +7,7 @@ import Skills from '../components/Skills'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-slate-50 ">
+    <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
       <Head>
         <title>Arindam's Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
