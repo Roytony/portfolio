@@ -5,9 +5,33 @@ import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Services from '../components/Services'
 import Skills from '../components/Skills'
+import {gql, GraphQLClient} from "graphql-request";
 
-const Home: NextPage = () => {
 
+export async function getStaticProps() {
+    const graphCms = new GraphQLClient("https://api-ap-south-1.graphcms.com/v2/cl3whaa4egnvk01xi03ir29it/master")
+    const data = await graphCms.request(
+        gql`
+        query MyQuery {
+          projects {
+            id
+            title
+            description
+          }
+        }
+        `
+    )
+
+    return {
+        props: {
+            data
+        }
+    }
+}
+
+// @ts-ignore
+const Home: NextPage = ({data}) => {
+    console.log(data)
     return (
         <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
             <Head>
