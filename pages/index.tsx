@@ -12,11 +12,14 @@ export async function getStaticProps() {
     const graphCms = new GraphQLClient("https://api-ap-south-1.graphcms.com/v2/cl3whaa4egnvk01xi03ir29it/master")
     const data = await graphCms.request(
         gql`
-        query MyQuery {
-          projects {
+        query {
+          projects{
             id
             title
             description
+            image{
+              url
+            }
           }
         }
         `
