@@ -12,7 +12,7 @@ export async function getStaticProps() {
     const graphCms = new GraphQLClient("https://api-ap-south-1.graphcms.com/v2/cl3whaa4egnvk01xi03ir29it/master")
     const data = await graphCms.request(
         gql`
-        query {
+        {
           projects{
             id
             title
@@ -20,6 +20,8 @@ export async function getStaticProps() {
             image{
               url
             }
+            githubLink
+            websiteLink
           }
         }
         `
@@ -34,7 +36,7 @@ export async function getStaticProps() {
 
 // @ts-ignore
 const Home: NextPage = ({data}) => {
-    console.log(data)
+    console.log(data.projects)
     return (
         <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
             <Head>
@@ -44,7 +46,7 @@ const Home: NextPage = ({data}) => {
 
             <main className="mx-auto w-full max-w-[1280px] py-6">
                 <Hero/>
-                <Projects/>
+                <Projects data={data.projects}/>
                 <Services/>
                 <Skills/>
             </main>
