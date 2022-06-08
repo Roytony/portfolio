@@ -107,14 +107,7 @@ const Services = () => {
           }
         />
       </div>
-      <div className="flex items-center justify-center">
-        <button
-          onClick={showForm}
-          className="my-4 rounded-md bg-[#FFC107] px-8 py-2 text-white"
-        >
-          Inquire by email
-        </button>
-      </div>
+
     </div>
   )
 }

@@ -1,58 +1,60 @@
-import type {NextPage} from 'next'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Services from '../components/Services'
 import Skills from '../components/Skills'
-import {gql, GraphQLClient} from "graphql-request";
-
+import { gql, GraphQLClient } from 'graphql-request'
+import ContactMe from '../components/ContactMe'
 
 export async function getStaticProps() {
-    const graphCms = new GraphQLClient("https://api-ap-south-1.graphcms.com/v2/cl3whaa4egnvk01xi03ir29it/master")
-    const data = await graphCms.request(
-        gql`
-        {
-          projects{
-            id
-            title
-            description
-            image{
-              url
-            }
-            githubLink
-            websiteLink
+  const graphCms = new GraphQLClient(
+    'https://api-ap-south-1.graphcms.com/v2/cl3whaa4egnvk01xi03ir29it/master'
+  )
+  const data = await graphCms.request(
+    gql`
+      {
+        projects {
+          id
+          title
+          description
+          image {
+            url
           }
+          githubLink
+          websiteLink
         }
-        `
-    )
+      }
+    `
+  )
 
-    return {
-        props: {
-            data
-        }
-    }
+  return {
+    props: {
+      data,
+    },
+  }
 }
 
 // @ts-ignore
-const Home: NextPage = ({data}) => {
-    console.log(data.projects)
-    return (
-        <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
-            <Head>
-                <title>Arindam's Portfolio</title>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
+const Home: NextPage = ({ data }) => {
+  console.log(data.projects)
+  return (
+    <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
+      <Head>
+        <title>Arindam's Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-            <main className="mx-auto w-full max-w-[1280px] py-6">
-                <Hero/>
-                <Projects data={data.projects}/>
-                <Services/>
-                <Skills/>
-            </main>
-        </div>
-    )
+      <main className="mx-auto w-full max-w-[1280px] py-6">
+        <Hero />
+        <Projects data={data.projects} />
+        <Services />
+        <ContactMe />
+        {/* <Skills/> */}
+      </main>
+    </div>
+  )
 }
-
 
 export default Home
