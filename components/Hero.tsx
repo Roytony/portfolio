@@ -42,13 +42,17 @@ const Hero = () => {
           quality coe to maintain a good developer experiences
         </p>
         <div className="flex space-x-8  py-4">
-          <div>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={'https://twitter.com/Arindam20103910'}
+          >
             <Image
               src="https://www.svgrepo.com/show/107798/twitter.svg"
               width={40}
               height={40}
             />
-          </div>
+          </a>
           <div>
             <a
               target="_blank"
