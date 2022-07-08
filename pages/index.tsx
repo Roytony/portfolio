@@ -1,12 +1,15 @@
+import { Suspense, lazy } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 
 import Hero from '../components/Hero'
-import Projects from '../components/Projects'
+// import Projects from '../components/Projects'
 import Services from '../components/Services'
 import { gql, GraphQLClient } from 'graphql-request'
 import ContactMe from '../components/ContactMe'
+
+const Projects = lazy(() => import('../components/Projects'))
 
 export async function getStaticProps() {
   const graphCms = new GraphQLClient(
@@ -55,7 +58,9 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
 
       <main className="mx-auto w-full max-w-[1280px] py-6">
         <Hero />
-        <Projects data={data.projects} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Projects data={data.projects} />
+        </Suspense>
         <Services />
         <ContactMe />
       </main>

@@ -26,7 +26,9 @@ const Hero = () => {
             className="rounded-full object-cover"
             src="/pic3.png"
             width={300}
+            alt="Arindam Roy"
             height={300}
+            layout="fixed"
           />
         </motion.div>
       </div>
@@ -51,6 +53,8 @@ const Hero = () => {
               src="https://www.svgrepo.com/show/107798/twitter.svg"
               width={40}
               height={40}
+              alt="twitter_logo"
+              layout="fixed"
             />
           </a>
           <div>
@@ -63,6 +67,8 @@ const Hero = () => {
                 src="https://www.svgrepo.com/show/341847/github.svg"
                 width={40}
                 height={40}
+                alt="github_logo"
+                layout="fixed"
               />
             </a>
           </div>
@@ -72,6 +78,8 @@ const Hero = () => {
                 src="https://www.svgrepo.com/show/2784/mail.svg"
                 width={40}
                 height={40}
+                alt="mail_logo"
+                layout="fixed"
               />
             </a>
           </div>
