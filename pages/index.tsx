@@ -1,10 +1,9 @@
 import { Suspense, lazy } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { NextSeo } from 'next-seo'
+// import { NextSeo } from 'next-seo'
 
 import Hero from '../components/Hero'
-// import Projects from '../components/Projects'
 import Services from '../components/Services'
 import { gql, GraphQLClient } from 'graphql-request'
 import ContactMe from '../components/ContactMe'
@@ -46,7 +45,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
         <title>Arindam's Portfolio</title>
         <link rel="icon" href="/pic3.ico" />
       </Head>
-      <NextSeo
+      {/* <NextSeo
         title="Arindam's Roy Portfolio"
         description="Arindam Roy is a software engineer and a full-stack developer. He is a self-taught developer and has a passion for learning new technologies and building cool stuff."
         canonical="https://www.canonical.ie/"
@@ -77,7 +76,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
           ],
           site_name: "Arindam's portfolio",
         }}
-      />
+      /> */}
 
       <main className="mx-auto w-full max-w-[1280px] py-6">
         <Hero />
