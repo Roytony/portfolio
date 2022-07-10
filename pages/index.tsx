@@ -49,6 +49,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
       <NextSeo
         title="Arindam's Roy Portfolio"
         description="Arindam Roy is a software engineer and a full-stack developer. He is a self-taught developer and has a passion for learning new technologies and building cool stuff."
+        canonical="https://www.canonical.ie/"
         twitter={{
           handle: '@Arindam20103910',
           site: 'portfolio-chi-eight-57.vercel.app',
