@@ -4,7 +4,7 @@ const Document = () => {
     return (
         <Html>
             <Head>
-            <meta name="twitter:card" content="This is simple portfolio of Arindam Roy " />
+            <meta name="twitter:card" content="Summary" />
             <meta name="twitter:site" content="@https://portfolio-chi-eight-57.vercel.app/" /> 
             <meta name="twitter:title" content="Arindam's portfolio" /> 
             <meta name="twitter:description" content="This is a portfolio website of Arindam Roy"/> 
