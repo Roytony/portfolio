@@ -54,6 +54,28 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
           site: 'portfolio-chi-eight-57.vercel.app',
           cardType: 'summary_large_image',
         }}
+        openGraph={{
+          url: 'https://portfolio-chi-eight-57.vercel.app/',
+          title: "Arindam's Portfolio",
+          description: 'This is a simple portfolio of Arindam Roy ',
+          images: [
+            {
+              url: '/pic3.png',
+              width: 800,
+              height: 600,
+              alt: 'Arindam Roy',
+              type: 'image/jpeg',
+            },
+            {
+              url: 'https://media.graphassets.com/UdEP7CwOSN6zRrpIxgLe',
+              width: 900,
+              height: 800,
+              alt: 'Sass Landing Page',
+              type: 'image/jpeg',
+            },
+          ],
+          site_name: "Arindam's portfolio",
+        }}
       />
 
       <main className="mx-auto w-full max-w-[1280px] py-6">
