@@ -1,5 +1,5 @@
-import { Suspense, lazy } from 'react'
 import type { NextPage } from 'next'
+import { Suspense, lazy } from 'react'
 import Head from 'next/head'
 
 import Hero from '../components/Hero'
@@ -8,6 +8,17 @@ import { gql, GraphQLClient } from 'graphql-request'
 import ContactMe from '../components/ContactMe'
 
 const Projects = lazy(() => import('../components/Projects'))
+
+type Projects = {
+  id: string
+  title: string
+  description: string
+  image: {
+    url: string
+  }
+  githubLink: string
+  websiteLink: string
+}
 
 export async function getStaticProps() {
   const graphCms = new GraphQLClient(
@@ -37,7 +48,7 @@ export async function getStaticProps() {
   }
 }
 
-const Home: NextPage<{ data: any }> = ({ data }) => {
+const Home: NextPage = ({ data }: { data: { projects: Projects[] } }) => {
   return (
     <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
       <Head>
