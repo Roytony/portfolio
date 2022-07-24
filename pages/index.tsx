@@ -51,7 +51,7 @@ export async function getStaticProps() {
 
 const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
   return (
-    <div className="flex min-h-screen w-full flex-col bg-slate-50  dark:bg-[#2e3440] dark:text-white">
+    <div className="flex min-h-screen w-full flex-col bg-slate-50  ">
       <NextSeo
         openGraph={{
           type: 'website',
@@ -65,6 +65,12 @@ const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
               alt: 'website Preview',
               type: 'image/png',
             },
+            {
+              url: 'https://media.graphassets.com/p8JGCzdQuqMkuaK23D30',
+            },
+            {
+              url: 'https://media.graphassets.com/38W6DEnPRWaWs9wm8gbP',
+            },
           ],
         }}
         twitter={{
@@ -77,7 +83,7 @@ const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
         <title>Arindam's Portfolio</title>
         <link rel="icon" href="/pic3.ico" />
       </Head>
-      <main className="mx-auto w-full max-w-[1280px] py-6 dark:bg-[#2e3440]">
+      <main className="mx-auto w-full max-w-[1280px] py-6 ">
         <Hero />
         <Suspense fallback={<div>Loading...</div>}>
           <Projects data={data.projects} />
