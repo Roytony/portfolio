@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { Suspense, lazy } from 'react'
 import Head from 'next/head'
+import { NextSeo } from 'next-seo'
 
 import Hero from '../components/Hero'
 import Services from '../components/Services'
@@ -48,9 +49,21 @@ export async function getStaticProps() {
   }
 }
 
-const Home: NextPage = ({ data }: { data: { projects: Projects[] } }) => {
+const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
   return (
     <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
+      <NextSeo
+        openGraph={{
+          type: 'website',
+          title: "Arindams Roy's portfolio",
+          description: 'This is a simple website to showcase my Projects ',
+        }}
+        twitter={{
+          handle: '@Arindam20103910',
+          site: '@https://portfolio-chi-eight-57.vercel.app/',
+          cardType: 'summary_large_image',
+        }}
+      />
       <Head>
         <title>Arindam's Portfolio</title>
         <link rel="icon" href="/pic3.ico" />
