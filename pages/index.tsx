@@ -51,12 +51,21 @@ export async function getStaticProps() {
 
 const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
   return (
-    <div className="flex min-h-screen w-full flex-col  bg-slate-50 ">
+    <div className="flex min-h-screen w-full flex-col bg-slate-50  dark:bg-[#2e3440] dark:text-white">
       <NextSeo
         openGraph={{
           type: 'website',
           title: "Arindams Roy's portfolio",
           description: 'This is a simple website to showcase my Projects ',
+          images: [
+            {
+              url: '/preview.png',
+              width: 900,
+              height: 800,
+              alt: 'website Preview',
+              type: 'image/png',
+            },
+          ],
         }}
         twitter={{
           handle: '@Arindam20103910',
@@ -68,7 +77,7 @@ const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
         <title>Arindam's Portfolio</title>
         <link rel="icon" href="/pic3.ico" />
       </Head>
-      <main className="mx-auto w-full max-w-[1280px] py-6">
+      <main className="mx-auto w-full max-w-[1280px] py-6 dark:bg-[#2e3440]">
         <Hero />
         <Suspense fallback={<div>Loading...</div>}>
           <Projects data={data.projects} />
