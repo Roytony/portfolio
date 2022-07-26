@@ -57,21 +57,6 @@ const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
           type: 'website',
           title: "Arindams Roy's portfolio",
           description: 'This is a simple website to showcase my Projects ',
-          images: [
-            {
-              url: '../public/preview.png',
-              width: 900,
-              height: 800,
-              alt: 'website Preview',
-              type: 'image/png',
-            },
-            {
-              url: 'https://media.graphassets.com/p8JGCzdQuqMkuaK23D30',
-            },
-            {
-              url: 'https://media.graphassets.com/38W6DEnPRWaWs9wm8gbP',
-            },
-          ],
         }}
         twitter={{
           handle: '@Arindam20103910',
