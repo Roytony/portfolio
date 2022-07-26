@@ -59,7 +59,7 @@ const Home: NextPage<{ data: { projects: Projects[] } }> = ({ data }) => {
           description: 'This is a simple website to showcase my Projects ',
           images: [
             {
-              url: '/preview.png',
+              url: '../public/preview.png',
               width: 900,
               height: 800,
               alt: 'website Preview',
