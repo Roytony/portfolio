@@ -6,6 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/drei": "^9.25.2",
+    "@react-three/fiber": "^8.6.0",
+    "@types/three": "^0.143.2",
     "axios": "^0.27.2",
     "framer-motion": "^6.3.3",
     "graphql": "^16.5.0",
@@ -16,7 +19,9 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.31.3",
     "react-hot-toast": "^2.2.0",
-    "react-scroll": "^1.8.7"
+    "react-scroll": "^1.8.7",
+    "react-simple-typewriter": "^3.0.1",
+    "three": "^0.143.0"
   },
   "devDependencies": {
     "@types/node": "17.0.4",

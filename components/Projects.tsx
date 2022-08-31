@@ -14,55 +14,36 @@ interface ProjectProps {
   websiteLink: string
 }
 
-const Projects: React.FC<{ data: ProjectProps[] }> = ({ data }) => {
+const Project: React.FC<{ data: ProjectProps[] }> = ({ data }) => {
   return (
-    <div className="w-full py-5">
-      <h2 className="py-4 text-center text-3xl font-semibold">Projects</h2>
-      <div className="mx-auto grid w-[90%] grid-cols-1 gap-5 lg:w-full   lg:grid-cols-3">
-        {data.map((item) => (
-          <Project
+    <section className="mx-auto w-full max-w-[1280px] px-4 py-4">
+      <h1 className="bg-gradient-to-r from-yellow-300 to-yellow-600 bg-clip-text text-3xl font-bold  text-transparent">
+        Here is all my projects
+      </h1>
+
+      <div className="mx-auto flex w-full max-w-3xl flex-col  items-center">
+        {data.map((item, i) => (
+          <article
+            className={`w-full max-w-[400px] cursor-pointer  py-3 transition duration-100 ease-out hover:scale-110  ${
+              i % 2 ? 'self-start' : 'self-end'
+            } `}
             key={item.id}
-            websiteLink={item.websiteLink}
-            description={item.description}
-            img={item.image.url}
-            title={item.title}
-          />
+          >
+            <a href={item.websiteLink} target={'_blank'}>
+              <Image
+                src={item.image.url}
+                width={500}
+                height={300}
+                className="roudned-md"
+              />
+            </a>
+            <h2 className="text-2xl font-semibold">{item.title}</h2>
+            <p className="text-sm">{item.description}</p>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 
-interface ProJectComprops {
-  img: string
-  title: string
-  description: string
-  websiteLink: string
-}
-
-const Project = ({ img, title, description, websiteLink }: ProJectComprops) => (
-  <motion.article
-    animate={{
-      y: [-30, 0],
-      scale: [1.1, 1],
-    }}
-    className="w-full  cursor-pointer rounded-lg bg-white shadow-lg  hover:shadow-xl hover:shadow-orange-300"
-  >
-    <a href={websiteLink} target="_blank" rel="noopener noreferrer">
-      <Image
-        src={img}
-        alt={title}
-        width={800}
-        height={400}
-        layout="responsive"
-      />
-      <div className="p-4">
-        <h2 className="py-2 text-2xl font-bold">{title}</h2>
-
-        <p className="text-sm font-medium text-gray-800">{description}</p>
-      </div>
-    </a>
-  </motion.article>
-)
-
-export default Projects
+export default Project
