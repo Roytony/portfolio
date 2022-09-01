@@ -8,7 +8,7 @@ import Footer from '../components/Footer'
 
 const Home: NextPage<{ data: any }> = ({ data }) => {
   return (
-    <div className="relative min-h-screen w-full bg-[#111]  text-white">
+    <div className="relative min-h-screen w-full bg-[#111] bg-gradient-to-tr from-[#111] to-[#0c0909]  text-white">
       <main className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center px-4 py-4">
         <div className="h-[300px]   w-[300px]  md:h-[500px] md:w-[500px]">
           <Robot />
@@ -67,7 +67,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
 
 export default Home
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const graphCms = new GraphQLClient(
     'https://api-ap-south-1.graphcms.com/v2/cl3whaa4egnvk01xi03ir29it/master'
   )
