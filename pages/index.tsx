@@ -34,7 +34,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             target={'_blank'}
           >
             <div className="grid cursor-pointer place-items-center rounded-lg  border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
-              Github
+              <p>Github</p>
             </div>
           </a>
 
@@ -44,7 +44,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             target={'_blank'}
           >
             <div className="grid cursor-pointer place-items-center rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
-              Twitter
+              <p>Twitter</p>
             </div>
           </a>
 
@@ -54,7 +54,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             target={'_blank'}
           >
             <div className="grid cursor-pointer place-items-center rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
-              Blog
+              <p>Blog</p>
             </div>
           </a>
         </div>
