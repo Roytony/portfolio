@@ -30,8 +30,10 @@ const Project: React.FC<{ data: ProjectProps[] }> = ({ data }) => {
             <a href={item.websiteLink} target={'_blank'}>
               <Image
                 src={item.image.url}
+                alt={item.title}
                 width={500}
                 height={300}
+                layout="responsive"
                 className="roudned-md"
               />
             </a>

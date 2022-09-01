@@ -1,17 +1,23 @@
+import React, { Suspense } from 'react'
 import type { NextPage } from 'next'
 
 import { gql, GraphQLClient } from 'graphql-request'
-import Robot from '../components/Robot'
 
-import Project from '../components/Projects'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
+
+const Project = React.lazy(() => import('../components/Projects'))
+const Robot = React.lazy(() => import('../components/Robot'))
 
 const Home: NextPage<{ data: any }> = ({ data }) => {
   return (
     <div className="relative min-h-screen w-full bg-[#111] bg-gradient-to-tr from-[#111] to-[#0c0909]  text-white">
+      <Seo />
       <main className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center px-4 py-4">
         <div className="h-[300px]   w-[300px]  md:h-[500px] md:w-[500px]">
-          <Robot />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Robot />
+          </Suspense>
         </div>
         <h1 className="text-center text-5xl font-bold">
           Hi! this is{' '}
@@ -59,7 +65,9 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
           </a>
         </div>
       </main>
-      <Project data={data.projects} />
+      <Suspense fallback={<div>Loading....</div>}>
+        <Project data={data.projects} />
+      </Suspense>
       <Footer />
     </div>
   )
