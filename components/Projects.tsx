@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import { animateScroll as scroll } from 'react-scroll'
-import { motion } from 'framer-motion'
 
 interface ProjectProps {
   id: string

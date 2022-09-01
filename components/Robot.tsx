@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
-import { Canvas } from '@react-three/fiber'
+import { Canvas, useFrame } from '@react-three/fiber'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -16,9 +16,12 @@ type GLTFResult = GLTF & {
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/utility_robot.glb') as GLTFResult
+  const ref = useRef<THREE.Group>(null!)
+
+  useFrame(() => (ref.current.rotation.z += 0.01))
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 5, -60]} rotation={[-Math.PI / 2, 0, 0]}>
+      <group position={[0, 5, -60]} ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow

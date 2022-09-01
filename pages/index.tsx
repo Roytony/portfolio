@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
 
-import Hero from '../components/Hero'
 import { gql, GraphQLClient } from 'graphql-request'
-import ContactMe from '../components/ContactMe'
 import Robot from '../components/Robot'
 
 import Project from '../components/Projects'
@@ -35,7 +33,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             className="group"
             target={'_blank'}
           >
-            <div className="cursor-pointer rounded-lg  border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
+            <div className="grid cursor-pointer place-items-center rounded-lg  border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
               Github
             </div>
           </a>
@@ -45,7 +43,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             className="group"
             target={'_blank'}
           >
-            <div className="cursor-pointer rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
+            <div className="grid cursor-pointer place-items-center rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
               Twitter
             </div>
           </a>
@@ -55,7 +53,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             className="group"
             target={'_blank'}
           >
-            <div className="cursor-pointer rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
+            <div className="grid cursor-pointer place-items-center rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
               Blog
             </div>
           </a>
