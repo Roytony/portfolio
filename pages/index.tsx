@@ -5,6 +5,7 @@ import { gql, GraphQLClient } from 'graphql-request'
 
 import Footer from '../components/Footer'
 import Seo from '../components/Seo'
+import Woble from '../components/Woble'
 
 const Project = React.lazy(() => import('../components/Projects'))
 const Robot = React.lazy(() => import('../components/Robot'))
@@ -13,15 +14,19 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
   return (
     <div className="relative min-h-screen w-full bg-[#111] bg-gradient-to-tr from-[#111] to-[#0c0909]  text-white">
       <Seo />
-      <main className="mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center px-4 py-4">
-        <div className="h-[300px]   w-[300px]  md:h-[500px] md:w-[500px]">
+      <main className="relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center px-4 py-4">
+        <div className="h-[300px]   w-[300px]  md:h-[600px] md:w-[600px]">
           <Suspense fallback={<div>Loading...</div>}>
             <Robot />
           </Suspense>
         </div>
+        {/** animated blob  */}
+        <div className="absolute bottom-0 z-10 h-[300px] w-[300px] md:hidden md:h-[1000px] md:w-[1000px]">
+          <Woble />
+        </div>
         <h1 className="text-center text-5xl font-bold">
           Hi! this is{' '}
-          <span className="bg-gradient-to-br from-yellow-400 to-yellow-800 bg-clip-text text-transparent">
+          <span className="rotate-90 bg-gradient-to-br from-[#4158D0] via-[#C850C0] to-[#FFCC70] bg-clip-text  text-transparent">
             Arindam Roy
           </span>{' '}
         </h1>

@@ -1,8 +1,14 @@
 import * as THREE from 'three'
 import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import {
+  OrthographicCamera,
+  PerspectiveCamera,
+  useGLTF,
+} from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { Canvas, useFrame } from '@react-three/fiber'
+
+import { Model as HouseModel } from './House'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -14,11 +20,11 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/utility_robot.glb') as GLTFResult
   const ref = useRef<THREE.Group>(null!)
 
-  useFrame(() => (ref.current.rotation.z += 0.01))
+  useFrame(() => (ref.current.rotation.y += -Math.PI / 4))
   return (
     <group {...props} dispose={null}>
       <group position={[0, 5, -60]} ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
@@ -44,9 +50,11 @@ useGLTF.preload('/utility_robot.glb')
 const Robot = () => {
   return (
     <Canvas>
+      <PerspectiveCamera makeDefault position={[20, 80, 350]} />
       <pointLight color={'yellow'} intensity={1} position={[0, 10, 0]} />
       <ambientLight />
-      <Model />
+      {/* <Model /> */}
+      <HouseModel />
     </Canvas>
   )
 }

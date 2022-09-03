@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Woble from './Woble'
 
 interface ProjectProps {
   id: string
@@ -14,8 +15,8 @@ interface ProjectProps {
 
 const Project: React.FC<{ data: ProjectProps[] }> = ({ data }) => {
   return (
-    <section className="mx-auto w-full max-w-[1280px] px-4 py-4">
-      <h1 className="bg-gradient-to-r from-yellow-300 to-yellow-600 bg-clip-text text-3xl font-bold  text-transparent">
+    <section className=" mx-auto w-full max-w-[1280px] px-4 py-4">
+      <h1 className="bg-gradient-to-r from-[#21D4FD] to-[#B721FF] bg-clip-text text-3xl font-bold  text-transparent">
         Here is all my projects
       </h1>
 
@@ -34,7 +35,7 @@ const Project: React.FC<{ data: ProjectProps[] }> = ({ data }) => {
                 width={500}
                 height={300}
                 layout="responsive"
-                className="roudned-md"
+                className="roudned-md opacity-90"
               />
             </a>
             <h2 className="text-2xl font-semibold">{item.title}</h2>
