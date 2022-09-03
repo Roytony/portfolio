@@ -20,11 +20,14 @@ type GLTFResult = GLTF & {
   }
 }
 
-function Model(props: JSX.IntrinsicElements['group']) {
+export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/utility_robot.glb') as GLTFResult
   const ref = useRef<THREE.Group>(null!)
 
-  useFrame(() => (ref.current.rotation.y += -Math.PI / 4))
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime()
+    ref.current.position.y = ref.current.position.y + Math.sin(time * 4) / 100
+  })
   return (
     <group {...props} dispose={null}>
       <group position={[0, 5, -60]} ref={ref} rotation={[-Math.PI / 2, 0, 0]}>
