@@ -5,14 +5,13 @@ import { gql, GraphQLClient } from 'graphql-request'
 
 import Footer from '../components/Footer'
 import Seo from '../components/Seo'
-import Woble from '../components/Woble'
 
 const Project = React.lazy(() => import('../components/Projects'))
 const Robot = React.lazy(() => import('../components/Robot'))
 
 const Home: NextPage<{ data: any }> = ({ data }) => {
   return (
-    <div className="relative min-h-screen w-full bg-[#111] bg-gradient-to-tr from-[#111] to-[#0c0909]  text-white">
+    <div className=" min-h-screen w-full bg-[#111] bg-gradient-to-tr from-[#111] to-[#0c0909]  text-white">
       <Seo />
       <main className="relative mx-auto flex min-h-screen w-full max-w-[1280px] flex-col items-center px-4 py-4">
         <div className="h-[300px]   w-[300px]  md:h-[600px] md:w-[600px]">
@@ -20,10 +19,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             <Robot />
           </Suspense>
         </div>
-        {/** animated blob  */}
-        <div className="absolute bottom-0 z-10 h-[300px] w-[300px] md:hidden md:h-[1000px] md:w-[1000px]">
-          <Woble />
-        </div>
+
         <h1 className="text-center text-5xl font-bold">
           Hi! this is{' '}
           <span className="rotate-90 bg-gradient-to-br from-[#4158D0] via-[#C850C0] to-[#FFCC70] bg-clip-text  text-transparent">
@@ -44,7 +40,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             className="group"
             target={'_blank'}
           >
-            <div className="grid cursor-pointer place-items-center rounded-lg  border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
+            <div className="grid  place-items-center rounded-lg border px-4 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black md:px-8 lg:cursor-pointer">
               <p>Github</p>
             </div>
           </a>
@@ -54,7 +50,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             className="group"
             target={'_blank'}
           >
-            <div className="grid cursor-pointer place-items-center rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
+            <div className="grid  place-items-center rounded-lg border px-4 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black md:px-8 lg:cursor-pointer">
               <p>Twitter</p>
             </div>
           </a>
@@ -64,7 +60,7 @@ const Home: NextPage<{ data: any }> = ({ data }) => {
             className="group"
             target={'_blank'}
           >
-            <div className="grid cursor-pointer place-items-center rounded-lg border px-10 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black">
+            <div className="grid  place-items-center rounded-lg border px-4 py-2 transition duration-100 ease-out group-hover:bg-white group-hover:font-bold group-hover:text-black md:px-8 lg:cursor-pointer">
               <p>Blog</p>
             </div>
           </a>
