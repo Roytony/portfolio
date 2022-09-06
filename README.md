@@ -7,4 +7,5 @@
 [website](https://portfolio-chi-eight-57.vercel.app/)
 
 ### preview
-![](public/website.png)
+
+![](\public\preview.png)
