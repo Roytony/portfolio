@@ -28,7 +28,7 @@ const Home: NextPage<{ data: any }> = ({data}) => {
           </span>{' '}
                 </h1>
                 <p className="py-4 text-center text-sm md:text-base">
-                    I'm a Full Stack Enginner specialization in React + Next.js +
+                    I'm a Full Stack Engineer specialization in React + Next.js +
                     TypeScript + Aws + Firebase with 2+ years if experience bulding,
                     <br/>
                     interactive web application . I'm dedicated to delivering great user
